@@ -1,0 +1,2180 @@
+[ 2018-07-27T09:03:03+08:00 ] 36.62.186.170 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000048s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000368s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000505s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000928s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = 50 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0004s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = 50 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = 50 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = 50 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = 50 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = 50 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapi` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_payapi` WHERE `en_payname` = 'Ylh5' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapiconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_payapiconfig` WHERE `payapiid` = 180 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = 50 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = 50 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = 50 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = 50 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = 50 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = 50 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapi` [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `pay_payapi` WHERE ( en_payname='Ylh5' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_userpayapizhanghao` WHERE ( userid=50 and payapiid=180 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapiaccount` [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `pay_payapiaccount` WHERE ( payapiid=180 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_payapiaccount` WHERE ( id=63 ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: unlockdomian /home/wwwroot/dajiangsrc/Application/Pay/Controller/PayController.class.php 第 108 行.
+SQL: SHOW COLUMNS FROM `pay_order` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_order` WHERE ( pay_orderid = '20180727090302' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `md5key` FROM `pay_userverifyinfo` WHERE ( userid=50 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_systembank` [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `pay_systembank` WHERE ( bankcode='YLH5' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `bankname` FROM `pay_systembank` WHERE ( bankcode='YLH5' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `id` FROM `pay_payapiconfig` WHERE ( payapiid=180 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_payapibank` [ RunTime:0.0003s ]
+SQL: SELECT `bankcode` FROM `pay_payapibank` WHERE ( systembankid = 202 and payapiconfigid = 12 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `pay_order` (`pay_memberid`,`pay_orderid`,`pay_amount`,`pay_poundage`,`pay_actualamount`,`pay_applydate`,`pay_bankcode`,`pay_bankname`,`pay_notifyurl`,`pay_callbackurl`,`pay_status`,`pay_tongdao`,`pay_zh_tongdao`,`pay_ytongdao`,`pay_yzh_tongdao`,`pay_tjurl`,`pay_productname`,`pay_productnum`,`pay_productdesc`,`pay_producturl`,`pay_reserved1`,`pay_reserved2`,`pay_reserved3`,`ddlx`,`memberid`,`key`,`account`) VALUES ('10050','20180727090302','1','0','1','1532653383','YLH5','银联H5','http://vip.zmn1.cn/cashier/server.php','http://vip.zmn1.cn/cashier/page.php','0','Ylh5','银联H5','Ylh5','银联H5','http://vip.zmn1.cn/cashier/pay.php','测试应用-支付功能体验(非商品消费)','','','','','','','0','','','') [ RunTime:0.0028s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000456s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000490s ]
+
+[ 2018-07-27T09:03:10+08:00 ] 36.62.186.170 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000057s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000363s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000502s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000921s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = 50 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0004s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = 50 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = 50 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = 50 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = 50 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = 50 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapi` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `pay_payapi` WHERE `en_payname` = 'Wgpay' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapiconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_payapiconfig` WHERE `payapiid` = 201 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = 50 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = 50 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = 50 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = 50 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = 50 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = 50 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapi` [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `pay_payapi` WHERE ( en_payname='Wgpay' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_userpayapizhanghao` WHERE ( userid=50 and payapiid=201 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapiaccount` [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `pay_payapiaccount` WHERE ( payapiid=201 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_payapiaccount` WHERE ( id=85 ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: unlockdomian /home/wwwroot/dajiangsrc/Application/Pay/Controller/PayController.class.php 第 108 行.
+SQL: SHOW COLUMNS FROM `pay_order` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_order` WHERE ( pay_orderid = '20180727090310' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `md5key` FROM `pay_userverifyinfo` WHERE ( userid=50 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_systembank` [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `pay_systembank` WHERE ( bankcode='WYPAY' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `bankname` FROM `pay_systembank` WHERE ( bankcode='WYPAY' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `id` FROM `pay_payapiconfig` WHERE ( payapiid=201 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_payapibank` [ RunTime:0.0003s ]
+SQL: SELECT `bankcode` FROM `pay_payapibank` WHERE ( systembankid = 206 and payapiconfigid = 33 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `pay_order` (`pay_memberid`,`pay_orderid`,`pay_amount`,`pay_poundage`,`pay_actualamount`,`pay_applydate`,`pay_bankcode`,`pay_bankname`,`pay_notifyurl`,`pay_callbackurl`,`pay_status`,`pay_tongdao`,`pay_zh_tongdao`,`pay_ytongdao`,`pay_yzh_tongdao`,`pay_tjurl`,`pay_productname`,`pay_productnum`,`pay_productdesc`,`pay_producturl`,`pay_reserved1`,`pay_reserved2`,`pay_reserved3`,`ddlx`,`memberid`,`key`,`account`) VALUES ('10050','20180727090310','1','0','1','1532653390','WYPAY','在线支付','http://vip.zmn1.cn/cashier/server.php','http://vip.zmn1.cn/cashier/page.php','0','Wgpay','银联网关','Wgpay','银联网关','http://vip.zmn1.cn/cashier/pay.php','测试应用-支付功能体验(非商品消费)','','','','','','','0',NULL,NULL,NULL) [ RunTime:0.0028s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000432s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000466s ]
+
+[ 2018-07-27T15:27:07+08:00 ] 45.251.110.35 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000050s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000378s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000569s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001009s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0004s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0004s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0004s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0004s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T15:27:07+08:00 ] 45.251.110.35 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000360s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000519s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000931s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0004s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T15:37:07+08:00 ] 45.251.110.35 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000063s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000533s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000744s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001353s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0204s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0098s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0101s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0004s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0004s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0005s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T15:37:07+08:00 ] 45.251.110.35 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000392s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000533s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000982s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0004s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T19:57:02+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000362s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000516s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000927s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0003s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapi` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_payapi` WHERE `en_payname` = 'Pawxsm' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapiconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_payapiconfig` WHERE `payapiid` = 196 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapi` [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `pay_payapi` WHERE ( en_payname='Pawxsm' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_userpayapizhanghao` WHERE ( userid=51 and payapiid=196 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapiaccount` [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `pay_payapiaccount` WHERE ( payapiid=196 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_payapiaccount` WHERE ( id=80 ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: unlockdomian /home/wwwroot/dajiangsrc/Application/Pay/Controller/PayController.class.php 第 108 行.
+SQL: SHOW COLUMNS FROM `pay_order` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_order` WHERE ( pay_orderid = '201807271957013654' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_money` [ RunTime:0.0003s ]
+SQL: SELECT `wallet` FROM `pay_money` WHERE ( userid=51 ) LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2018-07-27T19:57:47+08:00 ] 101.91.62.109 /pay_index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000049s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000454s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000577s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001088s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0003s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T19:57:47+08:00 ] 101.91.62.109 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000051s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000382s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000646s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001087s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0004s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T19:57:48+08:00 ] 61.151.226.151 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000047s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000357s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000509s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000917s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0004s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T19:58:32+08:00 ] 36.62.186.170 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000050s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000363s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000502s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000918s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = 50 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0003s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = 50 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = 50 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = 50 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = 50 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = 50 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapi` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_payapi` WHERE `en_payname` = 'Wgpay' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapiconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_payapiconfig` WHERE `payapiid` = 201 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = 50 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = 50 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = 50 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = 50 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = 50 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = 50 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapi` [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `pay_payapi` WHERE ( en_payname='Wgpay' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `pay_userpayapizhanghao` WHERE ( userid=50 and payapiid=201 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapiaccount` [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `pay_payapiaccount` WHERE ( payapiid=201 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_payapiaccount` WHERE ( id=85 ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: unlockdomian /home/wwwroot/dajiangsrc/Application/Pay/Controller/PayController.class.php 第 108 行.
+SQL: SHOW COLUMNS FROM `pay_order` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_order` WHERE ( pay_orderid = '20180727195832' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `md5key` FROM `pay_userverifyinfo` WHERE ( userid=50 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_systembank` [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `pay_systembank` WHERE ( bankcode='WYPAY' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `bankname` FROM `pay_systembank` WHERE ( bankcode='WYPAY' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `id` FROM `pay_payapiconfig` WHERE ( payapiid=201 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_payapibank` [ RunTime:0.0003s ]
+SQL: SELECT `bankcode` FROM `pay_payapibank` WHERE ( systembankid = 206 and payapiconfigid = 33 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `pay_order` (`pay_memberid`,`pay_orderid`,`pay_amount`,`pay_poundage`,`pay_actualamount`,`pay_applydate`,`pay_bankcode`,`pay_bankname`,`pay_notifyurl`,`pay_callbackurl`,`pay_status`,`pay_tongdao`,`pay_zh_tongdao`,`pay_ytongdao`,`pay_yzh_tongdao`,`pay_tjurl`,`pay_productname`,`pay_productnum`,`pay_productdesc`,`pay_producturl`,`pay_reserved1`,`pay_reserved2`,`pay_reserved3`,`ddlx`,`memberid`,`key`,`account`) VALUES ('10050','20180727195832','1','0','1','1532692712','WYPAY','在线支付','http://vip.zmn1.cn/cashier/server.php','http://vip.zmn1.cn/cashier/page.php','0','Wgpay','银联网关','Wgpay','银联网关','http://vip.zmn1.cn/cashier/pay.php','测试应用-支付功能体验(非商品消费)','','','','','','','0',NULL,NULL,NULL) [ RunTime:0.0023s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000452s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000487s ]
+
+[ 2018-07-27T19:58:47+08:00 ] 101.226.79.246 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000047s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000368s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000536s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000961s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0004s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T19:59:39+08:00 ] 36.62.186.170 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000050s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000364s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000542s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000964s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0004s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T19:59:42+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000047s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000333s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000504s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000886s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0003s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapi` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `pay_payapi` WHERE `en_payname` = 'Pawxsm' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapiconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_payapiconfig` WHERE `payapiid` = 196 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapi` [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `pay_payapi` WHERE ( en_payname='Pawxsm' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_userpayapizhanghao` WHERE ( userid=51 and payapiid=196 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapiaccount` [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `pay_payapiaccount` WHERE ( payapiid=196 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_payapiaccount` WHERE ( id=80 ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: unlockdomian /home/wwwroot/dajiangsrc/Application/Pay/Controller/PayController.class.php 第 108 行.
+SQL: SHOW COLUMNS FROM `pay_order` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_order` WHERE ( pay_orderid = '201807271959414585' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_money` [ RunTime:0.0003s ]
+SQL: SELECT `wallet` FROM `pay_money` WHERE ( userid=51 ) LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2018-07-27T20:01:00+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000347s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000529s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000927s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0004s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapi` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_payapi` WHERE `en_payname` = 'Pawxsm' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapiconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_payapiconfig` WHERE `payapiid` = 196 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapi` [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `pay_payapi` WHERE ( en_payname='Pawxsm' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `pay_userpayapizhanghao` WHERE ( userid=51 and payapiid=196 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapiaccount` [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `pay_payapiaccount` WHERE ( payapiid=196 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_payapiaccount` WHERE ( id=80 ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: unlockdomian /home/wwwroot/dajiangsrc/Application/Pay/Controller/PayController.class.php 第 108 行.
+SQL: SHOW COLUMNS FROM `pay_order` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_order` WHERE ( pay_orderid = '201807272000598427' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_money` [ RunTime:0.0003s ]
+SQL: SELECT `wallet` FROM `pay_money` WHERE ( userid=51 ) LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2018-07-27T20:01:04+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000342s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000518s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000916s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0004s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T20:01:05+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000047s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000365s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000519s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000936s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0003s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T20:01:05+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000048s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000362s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000545s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000963s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0003s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T20:01:06+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000350s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000537s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000939s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0004s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T20:01:06+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000349s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000535s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000935s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0004s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T20:01:07+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000048s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000375s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000526s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000955s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0004s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T20:01:12+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000047s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000369s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000528s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000950s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0004s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T20:01:13+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000047s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000348s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000525s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000923s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0004s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T20:01:13+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000051s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000360s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000549s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000959s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0004s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T20:01:40+08:00 ] 103.108.188.148 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000058s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000364s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000504s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000922s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0004s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T20:01:44+08:00 ] 103.108.188.148 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000048s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000374s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000505s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000933s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0004s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T20:03:18+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000047s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000357s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000537s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000947s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0004s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T20:03:18+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000365s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000546s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000963s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0004s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T20:03:18+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000366s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000518s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000934s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0004s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T20:03:19+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000042s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000348s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000493s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000890s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0004s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T20:03:22+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000346s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000511s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000909s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0003s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T20:03:22+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000358s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000513s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000919s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0003s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T20:03:23+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000349s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000579s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000977s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0003s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T20:03:28+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000357s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000516s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000924s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0004s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T20:03:29+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000357s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000519s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000926s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0003s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T20:03:29+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000344s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000529s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000923s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0004s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T20:04:00+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000365s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000520s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000940s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0004s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T20:05:00+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000050s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000392s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000535s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000982s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = 51 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0004s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapi` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_payapi` WHERE `en_payname` = 'Pawxsm' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapiconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_payapiconfig` WHERE `payapiid` = 196 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapi` [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `pay_payapi` WHERE ( en_payname='Pawxsm' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_userpayapizhanghao` WHERE ( userid=51 and payapiid=196 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapiaccount` [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `pay_payapiaccount` WHERE ( payapiid=196 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_payapiaccount` WHERE ( id=80 ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: unlockdomian /home/wwwroot/dajiangsrc/Application/Pay/Controller/PayController.class.php 第 108 行.
+SQL: SHOW COLUMNS FROM `pay_order` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_order` WHERE ( pay_orderid = '201807272004595010' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_money` [ RunTime:0.0004s ]
+SQL: SELECT `wallet` FROM `pay_money` WHERE ( userid=51 ) LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2018-07-27T20:05:01+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000047s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000370s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000550s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000977s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0004s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T20:05:49+08:00 ] 104.249.46.4 /Pay_Index.html%EF%BC%8C%E8%BF%99%E5%B0%B1%E6%98%AF%E4%B8%AA%E9%A1%B5%E9%9D%A2%EF%BC%8C
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000050s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000368s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000534s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000953s ]
+ERR: 无法加载控制器:Index.html，这就是个页面，
+
+[ 2018-07-27T20:05:58+08:00 ] 149.154.167.163 /Pay_Index.html%EF%BC%8C%E8%BF%99%E5%B0%B1%E6%98%AF%E4%B8%AA%E9%A1%B5%E9%9D%A2%EF%BC%8C%E8%B5%B7%E7%A0%81%E6%B5%8F%E8%A7%88%E5%99%A8%E9%87%8C%E6%98%AF%E8%83%BD
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000367s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000520s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000939s ]
+ERR: 无法加载控制器:Index.html，这就是个页面，起码浏览器里是能
+
+[ 2018-07-27T20:05:58+08:00 ] 104.249.46.3 /Pay_Index.html%EF%BC%8C%E8%BF%99%E5%B0%B1%E6%98%AF%E4%B8%AA%E9%A1%B5%E9%9D%A2%EF%BC%8C%E8%B5%B7%E7%A0%81%E6%B5%8F%E8%A7%88%E5%99%A8%E9%87%8C%E6%98%AF%E8%83%BD
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000352s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000524s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000946s ]
+ERR: 无法加载控制器:Index.html，这就是个页面，起码浏览器里是能
+
+[ 2018-07-27T20:06:12+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000355s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000538s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000961s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0003s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T20:06:13+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000351s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000493s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000893s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0003s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T20:06:13+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000465s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000547s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001078s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0003s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T20:06:14+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000362s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000519s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000932s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0003s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T20:06:49+08:00 ] 149.154.167.169 /Pay_Index.html%EF%BC%8C%E8%BF%99%E5%B0%B1%E6%98%AF%E4%B8%AA%E9%A1%B5%E9%9D%A2%EF%BC%8C
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000064s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000349s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000504s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000903s ]
+ERR: 无法加载控制器:Index.html，这就是个页面，
+
+[ 2018-07-27T20:06:49+08:00 ] 104.249.46.2 /Pay_Index.html%EF%BC%8C%E8%BF%99%E5%B0%B1%E6%98%AF%E4%B8%AA
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000042s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000347s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000558s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000961s ]
+ERR: 无法加载控制器:Index.html，这就是个
+
+[ 2018-07-27T20:06:50+08:00 ] 104.249.46.9 /Pay_Index.html%EF%BC%8C%E8%BF%99%E5%B0%B1%E6%98%AF%E4%B8%AA%E9%A1%B5%E9%9D%A2%EF%BC%8C
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000352s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000510s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000910s ]
+ERR: 无法加载控制器:Index.html，这就是个页面，
+
+[ 2018-07-27T20:06:56+08:00 ] 149.154.167.166 /Pay_Index.html%EF%BC%8C%E8%BF%99%E5%B0%B1%E6%98%AF%E4%B8%AA%E9%A1%B5%E9%9D%A2%EF%BC%8C%E8%B5%B7%E7%A0%81%E6%B5%8F%E8%A7%88%E5%99%A8%E9%87%8C
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000050s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000362s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000556s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000972s ]
+ERR: 无法加载控制器:Index.html，这就是个页面，起码浏览器里
+
+[ 2018-07-27T20:06:56+08:00 ] 104.249.46.6 /Pay_Index.html%EF%BC%8C%E8%BF%99%E5%B0%B1%E6%98%AF%E4%B8%AA%E9%A1%B5%E9%9D%A2%EF%BC%8C%E8%B5%B7%E7%A0%81%E6%B5%8F%E8%A7%88%E5%99%A8%E9%87%8C
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000353s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000526s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000931s ]
+ERR: 无法加载控制器:Index.html，这就是个页面，起码浏览器里
+
+[ 2018-07-27T20:07:11+08:00 ] 104.249.46.2 /Pay_Index.html%EF%BC%8C%E8%BF%99%E5%B0%B1%E6%98%AF%E4%B8%AA%E9%A1%B5%E9%9D%A2%EF%BC%8C%E8%B5%B7%E7%A0%81%E6%B5%8F%E8%A7%88%E5%99%A8%E9%87%8C%E6%98%AF%E8%83%BD%E6%89%93%E5%BC%80%E7%9A%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000351s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000535s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000938s ]
+ERR: 无法加载控制器:Index.html，这就是个页面，起码浏览器里是能打开的
+
+[ 2018-07-27T20:07:49+08:00 ] 104.249.46.3 /Pay_Index.html%EF%BC%8C%E8%BF%99
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000053s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000358s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000546s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000958s ]
+ERR: 无法加载控制器:Index.html，这
+
+[ 2018-07-27T20:07:50+08:00 ] 149.154.167.169 /Pay_Index.html%EF%BC%8C%E8%BF%99%E5%B0%B1%E6%98%AF%E4%B8%AA%E9%A1%B5%E9%9D%A2%EF%BC%8C
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000041s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000348s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000528s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000924s ]
+ERR: 无法加载控制器:Index.html，这就是个页面，
+
+[ 2018-07-27T20:07:54+08:00 ] 104.249.46.4 /Pay_Index.html%EF%BC%8C%E8%BF%99%E5%B0%B1%E6%98%AF%E4%B8%AA%E9%A1%B5%E9%9D%A2%EF%BC%8C%E8%B5%B7%E7%A0%81
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000048s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000370s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000522s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000943s ]
+ERR: 无法加载控制器:Index.html，这就是个页面，起码
+
+[ 2018-07-27T20:07:58+08:00 ] 149.154.167.161 /Pay_Index.html%EF%BC%8C%E8%BF%99%E5%B0%B1%E6%98%AF%E4%B8%AA%E9%A1%B5%E9%9D%A2%EF%BC%8C%E8%B5%B7%E7%A0%81%E6%B5%8F%E8%A7%88%E5%99%A8%E9%87%8C%E6%98%AF%E8%83%BD%E6%89%93
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000363s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000519s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000933s ]
+ERR: 无法加载控制器:Index.html，这就是个页面，起码浏览器里是能打
+
+[ 2018-07-27T20:07:58+08:00 ] 104.249.46.1 /Pay_Index.html%EF%BC%8C%E8%BF%99%E5%B0%B1%E6%98%AF%E4%B8%AA%E9%A1%B5%E9%9D%A2%EF%BC%8C%E8%B5%B7%E7%A0%81%E6%B5%8F%E8%A7%88%E5%99%A8%E9%87%8C%E6%98%AF%E8%83%BD%E6%89%93
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000359s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000513s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000922s ]
+ERR: 无法加载控制器:Index.html，这就是个页面，起码浏览器里是能打
+
+[ 2018-07-27T20:08:14+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000054s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000354s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000513s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000919s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0003s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapi` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_payapi` WHERE `en_payname` = 'Pawxsm' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapiconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_payapiconfig` WHERE `payapiid` = 196 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapi` [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `pay_payapi` WHERE ( en_payname='Pawxsm' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `pay_userpayapizhanghao` WHERE ( userid=51 and payapiid=196 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapiaccount` [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `pay_payapiaccount` WHERE ( payapiid=196 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_payapiaccount` WHERE ( id=80 ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: unlockdomian /home/wwwroot/dajiangsrc/Application/Pay/Controller/PayController.class.php 第 108 行.
+SQL: SHOW COLUMNS FROM `pay_order` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_order` WHERE ( pay_orderid = '201807272008132383' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_money` [ RunTime:0.0003s ]
+SQL: SELECT `wallet` FROM `pay_money` WHERE ( userid=51 ) LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2018-07-27T20:13:48+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000048s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000343s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000523s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000922s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0004s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T20:13:48+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000363s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000520s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000935s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0003s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T20:13:49+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000054s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000339s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000510s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000897s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0003s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T20:13:49+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000359s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000532s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000944s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0004s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T20:13:55+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000049s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000367s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000580s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000999s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0004s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T20:13:55+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000057s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000394s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000555s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001018s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0004s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T20:13:56+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000353s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000524s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000925s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0003s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T20:20:42+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000047s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000345s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000542s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000951s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = 51 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0004s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapi` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_payapi` WHERE `en_payname` = 'Pawxsm' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapiconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_payapiconfig` WHERE `payapiid` = 196 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapi` [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `pay_payapi` WHERE ( en_payname='Pawxsm' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_userpayapizhanghao` WHERE ( userid=51 and payapiid=196 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapiaccount` [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `pay_payapiaccount` WHERE ( payapiid=196 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_payapiaccount` WHERE ( id=80 ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: unlockdomian /home/wwwroot/dajiangsrc/Application/Pay/Controller/PayController.class.php 第 108 行.
+SQL: SHOW COLUMNS FROM `pay_order` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_order` WHERE ( pay_orderid = '201807272020416939' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_money` [ RunTime:0.0003s ]
+SQL: SELECT `wallet` FROM `pay_money` WHERE ( userid=51 ) LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2018-07-27T20:21:09+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000064s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000372s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000539s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000968s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = 51 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0003s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapi` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_payapi` WHERE `en_payname` = 'Pawxsm' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapiconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_payapiconfig` WHERE `payapiid` = 196 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapi` [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `pay_payapi` WHERE ( en_payname='Pawxsm' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_userpayapizhanghao` WHERE ( userid=51 and payapiid=196 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapiaccount` [ RunTime:0.0004s ]
+SQL: SELECT `id` FROM `pay_payapiaccount` WHERE ( payapiid=196 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_payapiaccount` WHERE ( id=80 ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: unlockdomian /home/wwwroot/dajiangsrc/Application/Pay/Controller/PayController.class.php 第 108 行.
+SQL: SHOW COLUMNS FROM `pay_order` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_order` WHERE ( pay_orderid = '201807272021084536' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_money` [ RunTime:0.0003s ]
+SQL: SELECT `wallet` FROM `pay_money` WHERE ( userid=51 ) LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2018-07-27T20:27:23+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000041s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000338s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000506s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000894s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0003s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapi` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_payapi` WHERE `en_payname` = 'Pawxsm' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapiconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_payapiconfig` WHERE `payapiid` = 196 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_payapi` [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `pay_payapi` WHERE ( en_payname='Pawxsm' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `pay_userpayapizhanghao` WHERE ( userid=51 and payapiid=196 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapiaccount` [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `pay_payapiaccount` WHERE ( payapiid=196 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `pay_payapiaccount` WHERE ( id=80 ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: unlockdomian /home/wwwroot/dajiangsrc/Application/Pay/Controller/PayController.class.php 第 108 行.
+SQL: SHOW COLUMNS FROM `pay_order` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_order` WHERE ( pay_orderid = '201807272027225633' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_money` [ RunTime:0.0003s ]
+SQL: SELECT `wallet` FROM `pay_money` WHERE ( userid=51 ) LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2018-07-27T20:27:30+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000349s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000524s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000923s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0004s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T20:27:30+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000349s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000520s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000918s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0003s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T20:27:31+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000054s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000352s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000527s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000930s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0004s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T20:27:31+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000041s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000376s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000510s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000936s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0003s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T20:27:32+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000356s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000512s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000919s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0003s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T20:27:32+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000354s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000516s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000920s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0004s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T20:29:51+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000066s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000354s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000514s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000917s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0003s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapi` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_payapi` WHERE `en_payname` = 'Pawxsm' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapiconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_payapiconfig` WHERE `payapiid` = 196 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapi` [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `pay_payapi` WHERE ( en_payname='Pawxsm' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_userpayapizhanghao` WHERE ( userid=51 and payapiid=196 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapiaccount` [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `pay_payapiaccount` WHERE ( payapiid=196 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_payapiaccount` WHERE ( id=80 ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: unlockdomian /home/wwwroot/dajiangsrc/Application/Pay/Controller/PayController.class.php 第 108 行.
+SQL: SHOW COLUMNS FROM `pay_order` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_order` WHERE ( pay_orderid = '201807272029502210' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_money` [ RunTime:0.0003s ]
+SQL: SELECT `wallet` FROM `pay_money` WHERE ( userid=51 ) LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2018-07-27T20:30:08+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000055s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000346s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000539s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000945s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0004s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T20:30:09+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000352s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000497s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000896s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0003s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T20:30:09+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000042s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000348s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000523s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000920s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0003s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T20:30:10+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000360s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000537s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000961s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0003s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T20:32:22+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000347s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000520s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000918s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0003s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapi` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_payapi` WHERE `en_payname` = 'Pawxsm' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapiconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_payapiconfig` WHERE `payapiid` = 196 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_payapi` [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `pay_payapi` WHERE ( en_payname='Pawxsm' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `pay_userpayapizhanghao` WHERE ( userid=51 and payapiid=196 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapiaccount` [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `pay_payapiaccount` WHERE ( payapiid=196 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_payapiaccount` WHERE ( id=80 ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: unlockdomian /home/wwwroot/dajiangsrc/Application/Pay/Controller/PayController.class.php 第 108 行.
+SQL: SHOW COLUMNS FROM `pay_order` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_order` WHERE ( pay_orderid = '201807272032211875' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_money` [ RunTime:0.0003s ]
+SQL: SELECT `wallet` FROM `pay_money` WHERE ( userid=51 ) LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2018-07-27T20:36:18+08:00 ] 112.30.128.184 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000050s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000377s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000558s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000991s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0004s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = -10000 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array /home/wwwroot/dajiangsrc/Application/Pay/Model/UserModel.class.php 第 24 行.
+
+[ 2018-07-27T20:36:22+08:00 ] 112.30.128.184 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000049s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000378s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000531s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000970s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = 51 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0004s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapi` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_payapi` WHERE `en_payname` = 'Pawxsm' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapiconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_payapiconfig` WHERE `payapiid` = 196 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapi` [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `pay_payapi` WHERE ( en_payname='Pawxsm' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `pay_userpayapizhanghao` WHERE ( userid=51 and payapiid=196 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapiaccount` [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `pay_payapiaccount` WHERE ( payapiid=196 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_payapiaccount` WHERE ( id=80 ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: unlockdomian /home/wwwroot/dajiangsrc/Application/Pay/Controller/PayController.class.php 第 108 行.
+SQL: SHOW COLUMNS FROM `pay_order` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_order` WHERE ( pay_orderid = '3995401988868096' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_money` [ RunTime:0.0003s ]
+SQL: SELECT `wallet` FROM `pay_money` WHERE ( userid=51 ) LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2018-07-27T20:37:47+08:00 ] 112.30.128.184 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000047s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000357s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000492s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000902s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = 51 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0004s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapi` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_payapi` WHERE `en_payname` = 'Pawxsm' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapiconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_payapiconfig` WHERE `payapiid` = 196 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapi` [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `pay_payapi` WHERE ( en_payname='Pawxsm' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_userpayapizhanghao` WHERE ( userid=51 and payapiid=196 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapiaccount` [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `pay_payapiaccount` WHERE ( payapiid=196 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_payapiaccount` WHERE ( id=80 ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: unlockdomian /home/wwwroot/dajiangsrc/Application/Pay/Controller/PayController.class.php 第 108 行.
+SQL: SHOW COLUMNS FROM `pay_order` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_order` WHERE ( pay_orderid = '3995403373185024' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_money` [ RunTime:0.0003s ]
+SQL: SELECT `wallet` FROM `pay_money` WHERE ( userid=51 ) LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2018-07-27T20:39:11+08:00 ] 112.30.128.184 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000347s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000501s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000901s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = 51 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0004s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapi` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_payapi` WHERE `en_payname` = 'Zfbh5' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapiconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_payapiconfig` WHERE `payapiid` = 199 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_payapi` [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `pay_payapi` WHERE ( en_payname='Zfbh5' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `pay_userpayapizhanghao` WHERE ( userid=51 and payapiid=199 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapiaccount` [ RunTime:0.0004s ]
+SQL: SELECT `id` FROM `pay_payapiaccount` WHERE ( payapiid=199 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `pay_payapiaccount` WHERE ( id=84 ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: unlockdomian /home/wwwroot/dajiangsrc/Application/Pay/Controller/PayController.class.php 第 108 行.
+SQL: SHOW COLUMNS FROM `pay_order` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_order` WHERE ( pay_orderid = '3995404750211072' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `md5key` FROM `pay_userverifyinfo` WHERE ( userid=51 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_systembank` [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `pay_systembank` WHERE ( bankcode='ZFBH5' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `bankname` FROM `pay_systembank` WHERE ( bankcode='ZFBH5' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `id` FROM `pay_payapiconfig` WHERE ( payapiid=199 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_payapibank` [ RunTime:0.0003s ]
+SQL: SELECT `bankcode` FROM `pay_payapibank` WHERE ( systembankid = 208 and payapiconfigid = 30 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `pay_order` (`pay_memberid`,`pay_orderid`,`pay_amount`,`pay_poundage`,`pay_actualamount`,`pay_applydate`,`pay_bankcode`,`pay_bankname`,`pay_notifyurl`,`pay_callbackurl`,`pay_status`,`pay_tongdao`,`pay_zh_tongdao`,`pay_ytongdao`,`pay_yzh_tongdao`,`pay_tjurl`,`pay_productname`,`pay_productnum`,`pay_productdesc`,`pay_producturl`,`pay_reserved1`,`pay_reserved2`,`pay_reserved3`,`ddlx`,`memberid`,`key`,`account`) VALUES ('10051','3995404750211072','100.00','0','100','1532695151','ZFBH5','支付宝H5','http://b.com:8081/game/onlinepay/yinju/notify.do','http://b.com:8081/game','0','Zfbh5','支付宝H5','Zfbh5','支付宝H5','http://b.com:8081/game/onlinepay/payRedirect.do','goods','','','','','','','0',NULL,NULL,NULL) [ RunTime:0.0024s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000364s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000393s ]
+
+[ 2018-07-27T20:47:27+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000048s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000348s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000524s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000925s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0003s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapi` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_payapi` WHERE `en_payname` = 'Pawxsm' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapiconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_payapiconfig` WHERE `payapiid` = 196 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_payapi` [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `pay_payapi` WHERE ( en_payname='Pawxsm' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_userpayapizhanghao` WHERE ( userid=51 and payapiid=196 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapiaccount` [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `pay_payapiaccount` WHERE ( payapiid=196 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `pay_payapiaccount` WHERE ( id=80 ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: unlockdomian /home/wwwroot/dajiangsrc/Application/Pay/Controller/PayController.class.php 第 108 行.
+SQL: SHOW COLUMNS FROM `pay_order` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_order` WHERE ( pay_orderid = '201807272047261463' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_money` [ RunTime:0.0003s ]
+SQL: SELECT `wallet` FROM `pay_money` WHERE ( userid=51 ) LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2018-07-27T20:53:14+08:00 ] 112.30.128.184 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000350s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000504s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000907s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0004s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapi` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_payapi` WHERE `en_payname` = 'Ylh5' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapiconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_payapiconfig` WHERE `payapiid` = 180 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapi` [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `pay_payapi` WHERE ( en_payname='Ylh5' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_userpayapizhanghao` WHERE ( userid=51 and payapiid=180 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapiaccount` [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `pay_payapiaccount` WHERE ( payapiid=180 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_payapiaccount` WHERE ( id=63 ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: unlockdomian /home/wwwroot/dajiangsrc/Application/Pay/Controller/PayController.class.php 第 108 行.
+SQL: SHOW COLUMNS FROM `pay_order` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_order` WHERE ( pay_orderid = '3995418566002688' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `md5key` FROM `pay_userverifyinfo` WHERE ( userid=51 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_systembank` [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `pay_systembank` WHERE ( bankcode='YLH5' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `bankname` FROM `pay_systembank` WHERE ( bankcode='YLH5' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `id` FROM `pay_payapiconfig` WHERE ( payapiid=180 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_payapibank` [ RunTime:0.0003s ]
+SQL: SELECT `bankcode` FROM `pay_payapibank` WHERE ( systembankid = 202 and payapiconfigid = 12 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `pay_order` (`pay_memberid`,`pay_orderid`,`pay_amount`,`pay_poundage`,`pay_actualamount`,`pay_applydate`,`pay_bankcode`,`pay_bankname`,`pay_notifyurl`,`pay_callbackurl`,`pay_status`,`pay_tongdao`,`pay_zh_tongdao`,`pay_ytongdao`,`pay_yzh_tongdao`,`pay_tjurl`,`pay_productname`,`pay_productnum`,`pay_productdesc`,`pay_producturl`,`pay_reserved1`,`pay_reserved2`,`pay_reserved3`,`ddlx`,`memberid`,`key`,`account`) VALUES ('10051','3995418566002688','100.00','0','100','1532695994','YLH5','银联H5','http://b.com:8081/game/onlinepay/yinju/notify.do','http://b.com:8081/game','0','Ylh5','银联H5','Ylh5','银联H5','http://b.com:8081/game/onlinepay/payRedirect.do','goods','','','','','','','0','','','') [ RunTime:0.0022s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000451s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000484s ]
+
+[ 2018-07-27T21:30:08+08:00 ] 122.55.235.10 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000351s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000528s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000933s ]
+SQL: SHOW COLUMNS FROM `pay_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = 51 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pay_userbasicinfo` [ RunTime:0.0003s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userpassword` [ RunTime:0.0003s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapi` [ RunTime:0.0003s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_userpayapizhanghao` [ RunTime:0.0003s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userverifyinfo` [ RunTime:0.0003s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapi` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_payapi` WHERE `en_payname` = 'Wgpay' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapiconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_payapiconfig` WHERE `payapiid` = 201 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `pay_user` WHERE `id` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `fullname`,`sex`,`birthday`,`sfznumber`,`phonenumber`,`qqnumber`,`address` FROM `pay_userbasicinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `loginpassword`,`paypassword` FROM `pay_userpassword` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `payapicontent`,`defaultpayapi` FROM `pay_userpayapi` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `payapiid`,`defaultpayapiuserid`,`feilv`,`fengding` FROM `pay_userpayapizhanghao` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `uploadsfzzm`,`uploadsfzbm`,`uploadscsfz`,`uploadyhkzm`,`uploadyhkbm`,`uploadyyzz`,`status`,`domain`,`md5key` FROM `pay_userverifyinfo` WHERE `userid` = 51 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_payapi` [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `pay_payapi` WHERE ( en_payname='Wgpay' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `pay_userpayapizhanghao` WHERE ( userid=51 and payapiid=201 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_payapiaccount` [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `pay_payapiaccount` WHERE ( payapiid=201 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `pay_payapiaccount` WHERE ( id=85 ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: unlockdomian /home/wwwroot/dajiangsrc/Application/Pay/Controller/PayController.class.php 第 108 行.
+SQL: SHOW COLUMNS FROM `pay_order` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_order` WHERE ( pay_orderid = '201807272130068578' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `md5key` FROM `pay_userverifyinfo` WHERE ( userid=51 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_systembank` [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `pay_systembank` WHERE ( bankcode='WYPAY' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `bankname` FROM `pay_systembank` WHERE ( bankcode='WYPAY' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `id` FROM `pay_payapiconfig` WHERE ( payapiid=201 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_payapibank` [ RunTime:0.0003s ]
+SQL: SELECT `bankcode` FROM `pay_payapibank` WHERE ( systembankid = 206 and payapiconfigid = 33 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `pay_order` (`pay_memberid`,`pay_orderid`,`pay_amount`,`pay_poundage`,`pay_actualamount`,`pay_applydate`,`pay_bankcode`,`pay_bankname`,`pay_notifyurl`,`pay_callbackurl`,`pay_status`,`pay_tongdao`,`pay_zh_tongdao`,`pay_ytongdao`,`pay_yzh_tongdao`,`pay_tjurl`,`pay_productname`,`pay_productnum`,`pay_productdesc`,`pay_producturl`,`pay_reserved1`,`pay_reserved2`,`pay_reserved3`,`ddlx`,`memberid`,`key`,`account`) VALUES ('10051','201807272130068578','1.00','0','1','1532698208','WYPAY','在线支付','http://paytest13.6yc.com:33301/mobile/userrech/onlinePay.do/notify/26','http://paytest13.6yc.com:33301/mobile/userrech/onlinePay.do/return/26','0','Wgpay','银联网关','Wgpay','银联网关','http://test13.6yc.com:33301/mobile/userrech/onlinePay.do','payment','','','','','','','0',NULL,NULL,NULL) [ RunTime:0.0028s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000391s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000420s ]
+
