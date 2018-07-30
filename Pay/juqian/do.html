@@ -1,0 +1,132 @@
+<html class="normal ">
+<head>
+    <meta charset="UTF-8">
+    <title>支付宝js h5测试</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+
+    <script src="static/jquery.min.js" charset="utf-8"></script>
+
+
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .weixin-tip {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            filter: alpha(opacity=80);
+            height: 100%;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .weixin-tip p {
+            text-align: center;
+            margin-top: 10%;
+            padding: 0 5%;
+        }
+
+        .qq-tip {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            filter: alpha(opacity=80);
+            height: 100%;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .qq-tip p {
+            text-align: center;
+            margin-top: 10%;
+            padding: 0 5%;
+        }
+    </style>
+
+    <script>
+        (function () {
+            ///////////
+            $(window).on("load", function () {
+                var winHeight = $(window).height();
+
+                //$("#download_app").hide();
+
+                function is_weixin() {
+                    var ua = navigator.userAgent.toLowerCase();
+//                    alert(ua);
+                    //alert(ua);
+                    //浏览器   mozilla/5.0 (windows nt 6.1) applewebkit/537.36(khtml,like gecko) chrome/41.0.2272.12 safari/53736
+                    //微信   mozilla/5.0 (linux;u;android 4.4.2;zh-cn;coolpad 8675 build/kot49h) applewebkit/533.1 (khtml,like gecko)version/4.0 mqqbrowser/5.4 tbs/025440 mobile safari/533.1 micromessenger/6.2.4.53_r843fb8e.600 nettype/wifi language/zh_cn
+                    //QQ Mozilla/5.0 (Linux; Android 6.0; PLK-AL10 Build/HONORPLK-AL10; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.132 MQQBrowser/6.2 TBS/043804 Mobile Safari/537.36 V1_AND_SQ_7.3.2_762_YYB_D QQ/7.3.2.3350 NetType/WIFI WebP/0.3.0 Pixel/1080
+                    //QQ Mozilla/5.0 (iPhone; CPU iPhone OS 11_2_1 like Mac OS X) AppleWebKit/604.4.7 (KHTML, like Gecko) Mobile/15C153 QQ/7.1.8.452 V1_IPH_SQ_7.1.8_1_APP_A Pixel/1080 Core/UIWebView NetType/WIFI QBWebViewType/1
+                    //QQ浏览器 Mozilla/5.0 (Linux; U; Android 6.0; zh-cn; PLK-AL10 Build/HONORPLK-AL10) AppleWebKit/537.36 (KHTML, like Gecko)Version/4.0 Chrome/37.0.0.0 MQQBrowser/8.0 Mobile Safari/537.36
+                    if (ua.match(/MicroMessenger/i) == "micromessenger") {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
+
+                var isWeixin = is_weixin();
+                if (isWeixin) {
+                    $(".weixin-tip").css("height", winHeight);
+                    $(".weixin-tip").show();
+                } else {
+                    //$("#download_app").show();
+                }
+            })
+        })();
+    </script>
+
+</head>
+<body>
+
+<div class="weixin-tip">
+    <p>
+        <img src="static/WechatIMG172.png" alt="浏览器打开"/>
+    </p>
+</div>
+<div class="qq-tip">
+    <p>
+        <img src="static/WechatIMG172.png" alt="浏览器打开"/>
+    </p>
+</div>
+
+<form action="do.php" method="post">
+
+    <div style="margin:0 auto;width:300px;height:50px;line-height:50px;text-align:center;font-size;14px;">支付宝h5测试</div>
+    <div style="margin:0 auto;width:300px;height:30px;line-height:30px;font-size;10px;">金额（元）</div>
+    <center><input style="width:300px;height:40px;border:1px solid #ccc;" type="text" id="total_fee" name="total_fee"
+                   value="0.01" ></center>
+    <div style="margin:0 auto;width:300px;height:30px;line-height:30px;font-size;10px;">订单详情</div>
+    <center><input style="width:300px;height:40px;border:1px solid #ccc;" type="text" id="body" name="body" value="小卖部">
+    </center>
+    <br>
+    <center><input style="width:100px;height:40px;" type="submit" name="wxh5pay" value="提交订单"></center>
+</form>
+
+</body>
+</html>
